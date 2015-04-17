@@ -35,15 +35,6 @@
 #endif
 
 #ifdef WIN32
-  #define USBMUXD_API __declspec( dllexport )
-#else
-  #ifdef HAVE_FVISIBILITY
-    #define USBMUXD_API __attribute__((visibility("default")))
-  #else
-    #define USBMUXD_API
-  #endif
-#endif
-
 #include <windows.h>
 #ifndef EPROTO
 #define EPROTO 134
