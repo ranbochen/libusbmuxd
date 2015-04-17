@@ -4,7 +4,8 @@ before_script:
 - mkdir $HOME/ext
 - tar -xvzf libplist.tar.gz -C $HOME/ext
 script:
-- CFLAGS="-I$HOME/ext/include"
+- export CFLAGS=-I$HOME/ext/include
+- export PKG_CONFIG_PATH=$HOME/ext/lib/pkgconfig:$PKG_CONFIG_PATH
 - "./autogen.sh"
 - "./configure --prefix=$HOME/out"
 - make
