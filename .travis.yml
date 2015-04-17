@@ -1,0 +1,19 @@
+language: cpp
+script:
+- wget https://github.com/libimobiledevice-win32/libplist/releases/download/1.12-gcc/libplist.tar.gz -C $HOME/ext
+- tar -xvzf libplist.tar.gz 
+- CFLAGS="-I$HOME/ext/include"
+- "./autogen.sh"
+- "./configure --prefix=$HOME/out"
+- make
+after_success:
+- make install
+- tar -zcvf libusbmuxd.tar.gz -C $HOME/out .
+deploy:
+  provider: releases
+  file: libusbmuxd.tar.gz
+  skip_cleanup: true
+  on:
+    tags: true
+  api-key:
+    secure: R19aXMblD6QHWIODHAlBc7hXEb3e6FJkpqmOBBf5IfS4AOAXHHaF4E7vED04Hw1j2P9rizgcQz5hRGPvt55WZ6zYh1/aoR28w1kjWsEpEY9qF3PpX60Ck53j0MmDmiiZwCalRwNMjC25OZB1rnKkLcrB7s+Jj+x7GkPHx5fO5lk=
