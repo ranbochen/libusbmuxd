@@ -27,14 +27,12 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
-//#include <unistd.h>
 #include <errno.h>
 #ifdef _MSC_VER
 #pragma warning(disable:4996)
 #pragma warning(disable:4244)
 #include <winsock2.h>
 #else
-#include <sys/time.h>
 #endif
 #include <sys/stat.h>
 #ifdef WIN32
@@ -42,6 +40,7 @@
 #include <windows.h>
 static int wsa_init = 0;
 #else
+#include <sys/time.h>
 #include <sys/socket.h>
 #include <sys/un.h>
 #include <netinet/in.h>

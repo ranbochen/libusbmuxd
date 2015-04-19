@@ -34,6 +34,10 @@
 #include <stdio.h>
 #include <string.h>
 
+#ifdef _MSC_VER
+  #define USBMUXD_API __declspec( dllexport )
+#else
+#endif
 #endif
 
 #ifdef WIN32
@@ -63,7 +67,6 @@
 #define USBMUXD_SOCKET_NAME "usbmuxd"
 #endif /* HAVE_INOTIFY */
 
-//#include <unistd.h>
 #include <signal.h>
 
 #include <plist/plist.h>
