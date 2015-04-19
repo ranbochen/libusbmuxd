@@ -37,3 +37,14 @@ docs/html
 libusbmuxd.pc
 tools/.libs/*
 tools/iproxy
+
+# MSVC
+*.opensdf
+*.sdf
+*.suo
+*.user
+*.filters
+packages/
+*.nupkg
+Win32/
+x64/
