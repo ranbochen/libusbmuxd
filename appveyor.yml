@@ -1,0 +1,21 @@
+before_build:
+  - nuget restore
+
+build:
+  project: libusbmuxd.vcxproj
+
+platform:
+  - Win32
+
+configuration:
+  - Debug
+
+on_success:
+  - cmd: choco install coapp
+  - ps: .\CreateNuGetPackage.ps1
+  - cmd: appveyor PushArtifact libusbmuxd.1.0.10.nupkg
+  - cmd: appveyor PushArtifact libusbmuxd.symbols.1.0.10.nupkg
+
+nuget:
+  project_feed: true
+  account_feed: true
