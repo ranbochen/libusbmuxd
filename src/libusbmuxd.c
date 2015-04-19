@@ -30,8 +30,10 @@
 #include <config.h>
 #endif
 
-#ifdef _MSC_VER
-#define __func__ __FUNCTION__
+#ifdef _MSC_VER 
+#include "msc_config.h"
+#endif
+
 #endif
 
 #ifdef WIN32

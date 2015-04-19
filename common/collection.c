@@ -23,8 +23,8 @@
 #include <config.h>
 #endif
 
-#ifdef _MSC_VER
-#define __func__ __FUNCTION__
+#ifdef _MSC_VER 
+#include "..\src\msc_config.h"
 #endif
 
 #include <stdlib.h>
