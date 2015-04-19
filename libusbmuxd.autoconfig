@@ -16,6 +16,12 @@ nuget{
         tags: { libusbmuxd, libimobiledevice, native };
     }
 
+    dependencies {
+        packages : {
+            libplist/1.12,
+        };
+    }
+
     files{ 
         include: { "include\*.h" };
 
