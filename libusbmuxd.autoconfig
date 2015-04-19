@@ -1,7 +1,7 @@
 nuget{
     nuspec{
         id = libusbmuxd;
-        version : 1.0.10;
+        version : 1.0.10.{build};
         title: libusbmuxd;
         authors: {libimobiledevice Project};
         owners: {quamotion};
