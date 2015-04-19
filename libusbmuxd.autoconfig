@@ -1,0 +1,27 @@
+nuget{
+    nuspec{
+        id = libusbmuxd;
+        version : 1.0.10;
+        title: libusbmuxd;
+        authors: {libimobiledevice Project};
+        owners: {quamotion};
+        licenseUrl: "http://opensource.org/licenses/LGPL-2.1";
+        projectUrl: "http://www.libimobiledevice.org/";
+        iconUrl: "http://www.nuget.org/Content/Images/packageDefaultIcon-50x50.png";
+        requireLicenseAcceptance:false;
+        description: "A client library to multiplex connections from and to iOS devices by connecting to a socket provided by a usbmuxd daemon.";
+        summary: "A client library to multiplex connections from and to iOS devices by connecting to a socket provided by a usbmuxd daemon.";
+        copyright: "https://github.com/libimobiledevice/libusbmuxd/blob/master/AUTHORS";
+        releaseNotes: "Release 1.0.10 of libusbmuxd. See https://github.com/libimobiledevice-win32/libusbmuxd/tree/msvc-1.0.10 for more.";
+        tags: { libusbmuxd, libimobiledevice, native };
+    }
+
+    files{ 
+        include: { "include\*.h" };
+
+	[x86,v120,debug] {
+            lib: Win32\Debug\libusbmuxd.lib;
+            symbols: Win32\Debug\vc120.pdb;
+        }
+    }
+}
