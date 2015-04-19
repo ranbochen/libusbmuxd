@@ -23,5 +23,20 @@ nuget{
             lib: Win32\Debug\libusbmuxd.lib;
             symbols: Win32\Debug\vc120.pdb;
         }
+
+	[x86,v120,release] {
+            lib: Win32\Release\libusbmuxd.lib;
+            symbols: Win32\Release\vc120.pdb;
+        }
+
+	[x64,v120,debug] {
+            lib: x64\Debug\libusbmuxd.lib;
+            symbols: x64\Debug\vc120.pdb;
+        }
+
+	[x64,v120,release] {
+            lib: x64\Release\libusbmuxd.lib;
+            symbols: x64\Release\vc120.pdb;
+        }
     }
 }

@@ -1,14 +1,11 @@
 before_build:
   - nuget restore
 
-build:
-  project: libusbmuxd.vcxproj
-
-platform:
-  - Win32
-
-configuration:
-  - Debug
+build_script:
+  - msbuild libusbmuxd.vcxproj /p:Configuration=Debug /p:Platform=Win32 /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+  - msbuild libusbmuxd.vcxproj /p:Configuration=Debug /p:Platform=x64 /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+  - msbuild libusbmuxd.vcxproj /p:Configuration=Release /p:Platform=Win32 /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+  - msbuild libusbmuxd.vcxproj /p:Configuration=Release /p:Platform=x64 /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
 on_success:
   - cmd: choco install coapp
