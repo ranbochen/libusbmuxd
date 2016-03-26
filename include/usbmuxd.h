@@ -30,10 +30,6 @@
 #define USBMUXD_API_MSC
 #endif
 
-#define USBMUXD_API
-#endif
-#endif
-
 #ifdef __cplusplus
 extern "C" {
 #endif
