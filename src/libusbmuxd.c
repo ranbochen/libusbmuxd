@@ -24,10 +24,6 @@
 #include <config.h>
 #endif
 
-#ifdef _MSC_VER 
-#include "msc_config.h"
-#endif
-
 #include <stdint.h>
 #include <stdlib.h>
 #include <errno.h>
