@@ -8,7 +8,9 @@ build_script:
   - msbuild libusbmuxd.vcxproj /p:Configuration=Release /p:Platform=x64 /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
 on_success:
-  - cmd: choco install -y coapp
+  - cmd: choco install wget
+  - cmd: wget http://coapp.org/files/CoApp.Tools.Powershell.msi
+  - cmd: start /wait msiexec /qb /i CoApp.Tools.Powershell.msi
   - ps: .\CreateNuGetPackage.ps1 -Build $ENV:APPVEYOR_BUILD_NUMBER
   - cmd: appveyor PushArtifact libusbmuxd.1.0.10.%APPVEYOR_BUILD_NUMBER%.nupkg
   - cmd: appveyor PushArtifact libusbmuxd.symbols.1.0.10.%APPVEYOR_BUILD_NUMBER%.nupkg
