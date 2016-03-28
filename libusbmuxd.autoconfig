@@ -39,21 +39,25 @@ nuget{
 	[x86,v140,debug] {
             lib: Win32\Debug\libusbmuxd.lib;
             symbols: Win32\Debug\libusbmuxd.pdb;
+            bin: Win32\Debug\iproxy.exe;
         }
 
 	[x86,v140,release] {
             lib: Win32\Release\libusbmuxd.lib;
             symbols: Win32\Release\libusbmuxd.pdb;
+            bin: Win32\Release\iproxy.exe;
         }
 
 	[x64,v140,debug] {
             lib: x64\Debug\libusbmuxd.lib;
             symbols: x64\Debug\libusbmuxd.pdb;
+            bin: x64\Debug\libusbmuxd.exe;
         }
 
 	[x64,v140,release] {
             lib: x64\Release\libusbmuxd.lib;
             symbols: x64\Release\libusbmuxd.pdb;
+            bin: x64\Release\libusbmuxd.exe;
         }
     }
 }
