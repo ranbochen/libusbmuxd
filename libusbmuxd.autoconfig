@@ -51,13 +51,13 @@ nuget{
 	[x64,v140,debug] {
             lib: x64\Debug\libusbmuxd.lib;
             symbols: x64\Debug\libusbmuxd.pdb;
-            bin: x64\Debug\libusbmuxd.exe;
+            bin: x64\Debug\iproxy.exe;
         }
 
 	[x64,v140,release] {
             lib: x64\Release\libusbmuxd.lib;
             symbols: x64\Release\libusbmuxd.pdb;
-            bin: x64\Release\libusbmuxd.exe;
+            bin: x64\Release\iproxy.exe;
         }
     }
 }
