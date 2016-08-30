@@ -31,24 +31,21 @@
 #include <string.h>
 
 #ifdef _MSC_VER
-  #define USBMUXD_API __declspec( dllexport )
+#define USBMUXD_API __declspec( dllexport )
 #else
-#endif
-#endif
-
-#ifdef WIN32
-#include <windows.h>
-#ifndef EPROTO
-#define EPROTO 134
-#endif
-#ifndef EBADMSG
-#define EBADMSG 104
+#define USBMUXD_API
 #endif
 
 #ifdef WIN32
 #include <winsock2.h>
 #include <windows.h>
 #define sleep(x) Sleep(x*1000)
+#ifndef EPROTO
+#define EPROTO 134
+#endif
+#ifndef EBADMSG
+#define EBADMSG 104
+#endif
 #else
 #include <unistd.h>
 #include <sys/socket.h>
