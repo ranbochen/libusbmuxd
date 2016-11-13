@@ -788,6 +788,12 @@ USBMUXD_API int usbmuxd_subscribe(usbmuxd_event_cb_t callback, void *user_data)
 {
 	int res;
 
+	// The caller should first unsubscribe the previous callback
+	// before registering a new one.
+	if (event_cb) {
+		return -EALREADY;
+	}
+
 	if (!callback) {
 		return -EINVAL;
 	}
